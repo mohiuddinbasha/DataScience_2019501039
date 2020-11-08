@@ -1,0 +1,5 @@
+library(arules)
+input = read.transactions(file = "C:/Users/BASHA/Desktop/Test/Data.csv", sep = ",")
+output = apriori(input, parameter = list(supp=0.01,conf=0.2))
+final = sort(output,by="count")
+inspect(final[1:21])
